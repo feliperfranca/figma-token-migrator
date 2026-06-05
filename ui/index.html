@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Figma Token Migrator</title>
+</head>
+<body>
+  <h2>Figma Token Migrator</h2>
+  <button id="scan">Scan</button>
+  <pre id="output"></pre>
+
+  <script>
+    document.getElementById('scan').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'SCAN' } }, '*');
+    };
+
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      if (!msg) return;
+      document.getElementById('output').textContent = JSON.stringify(msg, null, 2);
+    };
+  </script>
+</body>
+</html>

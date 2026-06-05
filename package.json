@@ -1,0 +1,12 @@
+{
+  "name": "figma-token-migrator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0"
+  }
+}
